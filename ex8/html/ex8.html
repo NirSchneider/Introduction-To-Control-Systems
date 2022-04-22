@@ -1,0 +1,167 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ex8</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-01-03"><meta name="DC.source" content="ex8.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Student ID</a></li><li><a href="#2">1 Nyquist plot</a></li></ul></div><h2 id="1">Student ID</h2><pre class="codeinput">ID_STUDENT_1 = 316098052;
+disp(ID_STUDENT_1)
+</pre><pre class="codeoutput">   316098052
+
+</pre><h2 id="2">1 Nyquist plot</h2><p>1.1 Draw the Nyquist plot for the following systems:</p><pre class="codeinput"><span class="comment">%written by hand and attached at the end</span>
+</pre><pre class="codeinput"><span class="comment">%1.2 Draw the Nyquist plot for the following systems:</span>
+GH1 = tf([1 8],[3 1 4]);
+nyquist(GH1)
+</pre><img vspace="5" hspace="5" src="ex8_01.png" alt=""> <pre class="codeinput">GH2 = tf([1 3],[1 0 0]);
+nyquist(GH2)
+</pre><img vspace="5" hspace="5" src="ex8_02.png" alt=""> <pre class="codeinput">GH3 = tf([5 15],[1 -4 8]);
+nyquist(GH3)
+</pre><img vspace="5" hspace="5" src="ex8_03.png" alt=""> <pre class="codeinput">GH4 = tf([2 1],[1 2.5 5 8]);
+nyquist(GH4)
+</pre><img vspace="5" hspace="5" src="ex8_04.png" alt=""> <p>1.3 Stability:</p><p>The Nyquist plot intersection with the real axis are at -2,0,2 for which</p><p>the values are:-1/120 and -1/400/</p><p>We encircle one pole in the s plane so we need to choose a k that will make</p><p>the plot in the w-plane to do one counter colockwise encirclement around</p><p>-1, so: -k/120&lt;-1&lt;-k/400 donates that 120&lt;k&lt;400</p><p>The nyquist plot displayed here is after stabilization</p><pre class="codeinput">GH_1 = tf(1,[10 70 40 -120]);
+syms <span class="string">w</span>
+s1=solve(imag((1)/(((1i*w)^3)+(7*(1i*w)^2)+(4*(1i*w))-12))==0,w);
+r1_1=evalfr(GH_1,2i);
+r2_1=evalfr(GH_1,-2i);
+r3_1=evalfr(GH_1,0);
+GH_1_s = tf(180,[10 70 40 -120]);
+nyquist(GH_1_s)
+</pre><img vspace="5" hspace="5" src="ex8_05.png" alt=""> <p>The Nyquist plot intersection with the real axis are at -4+i,4+i,0 for which</p><p>the values are:-5/90 and 1/50</p><p>The system has a pole at s=2, therefore we demand one encirclement of the left part around -1</p><p>so -5k/90&lt;1 donates that k&gt;18</p><p>The nyquist plot displayed here is after stabilization</p><pre class="codeinput">GH_2 = tf([1 5],[1 3 -1 27 -90]);
+syms <span class="string">w</span>
+s2=solve(imag((1i*w+5)/(((1i*w)^4)+(3*(1i*w)^3)-((1i*w)^2)+(27*(1i*w))-90))==0,w);
+r1_2=evalfr(GH_2,(4+1i)*1i);
+r2_2=evalfr(GH_2,(-4+1i)*1i);
+r3_2=evalfr(GH_2,0);
+GH_2_s = tf(20.*[1 5],[1 3 -1 27 -90]);
+nyquist(GH_2_s);
+</pre><img vspace="5" hspace="5" src="ex8_06.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Student ID
+ID_STUDENT_1 = 316098052;
+disp(ID_STUDENT_1)
+%% 1 Nyquist plot
+% 1.1 Draw the Nyquist plot for the following systems:
+%written by hand and attached at the end
+%%
+%1.2 Draw the Nyquist plot for the following systems:
+GH1 = tf([1 8],[3 1 4]);
+nyquist(GH1)
+%%
+GH2 = tf([1 3],[1 0 0]);
+nyquist(GH2)
+%% 
+GH3 = tf([5 15],[1 -4 8]);
+nyquist(GH3)
+%% 
+GH4 = tf([2 1],[1 2.5 5 8]);
+nyquist(GH4)
+%% 
+% 1.3 Stability:
+%
+% The Nyquist plot intersection with the real axis are at -2,0,2 for which
+%
+% the values are:-1/120 and -1/400/
+%
+% We encircle one pole in the s plane so we need to choose a k that will make
+%
+% the plot in the w-plane to do one counter colockwise encirclement around
+%
+% -1, so: -k/120<-1<-k/400 donates that 120<k<400
+%
+% The nyquist plot displayed here is after stabilization
+
+GH_1 = tf(1,[10 70 40 -120]);
+syms w
+s1=solve(imag((1)/(((1i*w)^3)+(7*(1i*w)^2)+(4*(1i*w))-12))==0,w);
+r1_1=evalfr(GH_1,2i);
+r2_1=evalfr(GH_1,-2i);
+r3_1=evalfr(GH_1,0);
+GH_1_s = tf(180,[10 70 40 -120]);
+nyquist(GH_1_s)
+
+%%
+% The Nyquist plot intersection with the real axis are at -4+i,4+i,0 for which
+%
+% the values are:-5/90 and 1/50
+%
+% The system has a pole at s=2, therefore we demand one encirclement of the left part around -1
+%
+% so -5k/90<1 donates that k>18
+%
+% The nyquist plot displayed here is after stabilization
+GH_2 = tf([1 5],[1 3 -1 27 -90]);
+syms w
+s2=solve(imag((1i*w+5)/(((1i*w)^4)+(3*(1i*w)^3)-((1i*w)^2)+(27*(1i*w))-90))==0,w);
+r1_2=evalfr(GH_2,(4+1i)*1i);
+r2_2=evalfr(GH_2,(-4+1i)*1i);
+r3_2=evalfr(GH_2,0);
+GH_2_s = tf(20.*[1 5],[1 3 -1 27 -90]);
+nyquist(GH_2_s);
+
+
+
+
+##### SOURCE END #####
+--></body></html>
