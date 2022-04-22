@@ -1,0 +1,212 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ex7</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-12-18"><meta name="DC.source" content="ex7.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Student ID</a></li><li><a href="#2">1  Sketch a Bode plot</a></li><li><a href="#6">2  Space robot</a></li><li><a href="#7">3 Closed loop system</a></li></ul></div><h2 id="1">Student ID</h2><pre class="codeinput">ID = 316098052;
+disp(ID)
+</pre><pre class="codeoutput">   316098052
+
+</pre><h2 id="2">1  Sketch a Bode plot</h2><p>The crossover frequency is the frequency in which the equation satisfy:</p><p><img src="ex7_eq17213733603993277701.png" alt="$$20log_{10}|G\left(jw\right)|=0dB$$" style="width:144px;height:15px;"></p><pre class="codeinput">G_0 = tf([0 0 1000],[1 40 300]);
+bode(G_0)
+cross_freq = allmargin(G_0);
+cross_freq.PMFrequency
+</pre><pre class="codeoutput">
+ans =
+
+   24.0214
+
+</pre><img vspace="5" hspace="5" src="ex7_01.png" alt=""> <pre class="codeinput">G_1 = tf([0 0 100],[1 1.2 20.2 4]);
+bode(G_1)
+cross_freq = allmargin(G_1);
+cross_freq.PMFrequency
+</pre><pre class="codeoutput">
+ans =
+
+    5.9700
+
+</pre><img vspace="5" hspace="5" src="ex7_02.png" alt=""> <pre class="codeinput">G_2 = tf([0 50 5000],[1 51 50]);
+bode(G_2)
+cross_freq = allmargin(G_2);
+cross_freq.PMFrequency
+</pre><pre class="codeoutput">
+ans =
+
+   70.7054
+
+</pre><img vspace="5" hspace="5" src="ex7_03.png" alt=""> <pre class="codeinput">G_3 = tf([100 1400 5000],[1 503 1502 1000]);
+bode(G_3)
+cross_freq = allmargin(G_3);
+cross_freq.PMFrequency
+</pre><pre class="codeoutput">
+ans =
+
+    3.0682
+
+</pre><img vspace="5" hspace="5" src="ex7_04.png" alt=""> <h2 id="6">2  Space robot</h2><p>1. The Bode diagram of the system:</p><p><img src="ex7_eq11151006072594437353.png" alt="$$G_{c}G\left(s\right)=\frac{781\left(s+10\right)}{s^{2}+22s+484}$$" style="width:162px;height:33px;"></p><pre class="codeinput">G_c = tf([0 781 7810],[1 22 484]);
+bode(G_c)
+[mag,phase,wout] = bode(G_c);
+[M,I] = max(mag);
+max_mag = M
+freq_at_max_mag = wout(I)
+phase_at_max_mag = phase(I)
+</pre><pre class="codeoutput">
+max_mag =
+
+   39.0387
+
+
+freq_at_max_mag =
+
+   20.1742
+
+
+phase_at_max_mag =
+
+  -16.5243
+
+</pre><img vspace="5" hspace="5" src="ex7_05.png" alt=""> <h2 id="7">3 Closed loop system</h2><p>1. Velocity error voefficient:</p><p>The steady state of ramp input is:</p><p><img src="ex7_eq01370720150075072784.png" alt="$$e\left(\infty\right)=\frac{1}{lim_{s\rightarrow0}sG_{C}G\left(s\right)}=\frac{4}{K}$$" style="width:197px;height:34px;"></p><p><img src="ex7_eq16303033081984280029.png" alt="$$\frac{4}{K}=\frac{1}{K_{v}}$$" style="width:55px;height:33px;"></p><p>Therefore the required K is:</p><p><img src="ex7_eq00876472302747495221.png" alt="$$K=40$$" style="width:47px;height:11px;"></p><p>2. Bode plot of the open-loop system:</p><p>The transfer system is:</p><p><img src="ex7_eq13556924283144312791.png" alt="$$G_{C}G\left(s\right)=\frac{40s+200}{s^{4}+12s^{3}+22s^{2}+20s}$$" style="width:217px;height:32px;"></p><pre class="codeinput">G_c = tf([0 40 200],[1 12 22 20 0]);
+bode(G_c)
+cross_freq = allmargin(G_c);
+cross_freq.PMFrequency
+</pre><pre class="codeoutput">
+ans =
+
+    2.7733
+
+</pre><img vspace="5" hspace="5" src="ex7_06.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Student ID
+ID = 316098052;
+disp(ID)
+%% 1  Sketch a Bode plot
+% The crossover frequency is the frequency in which the equation satisfy:
+%
+% $$20log_{10}|G\left(jw\right)|=0dB$$
+
+G_0 = tf([0 0 1000],[1 40 300]);
+bode(G_0)
+cross_freq = allmargin(G_0);
+cross_freq.PMFrequency
+%%
+G_1 = tf([0 0 100],[1 1.2 20.2 4]);
+bode(G_1)
+cross_freq = allmargin(G_1);
+cross_freq.PMFrequency
+%%
+G_2 = tf([0 50 5000],[1 51 50]);
+bode(G_2)
+cross_freq = allmargin(G_2);
+cross_freq.PMFrequency
+%%
+G_3 = tf([100 1400 5000],[1 503 1502 1000]);
+bode(G_3)
+cross_freq = allmargin(G_3);
+cross_freq.PMFrequency
+
+
+%% 2  Space robot
+%
+% 1. The Bode diagram of the system:
+%
+% $$G_{c}G\left(s\right)=\frac{781\left(s+10\right)}{s^{2}+22s+484}$$
+%
+
+G_c = tf([0 781 7810],[1 22 484]);
+bode(G_c)
+[mag,phase,wout] = bode(G_c);
+[M,I] = max(mag);
+max_mag = M
+freq_at_max_mag = wout(I)
+phase_at_max_mag = phase(I)
+
+%% 3 Closed loop system
+%
+% 1. Velocity error voefficient:
+%
+% The steady state of ramp input is:
+%
+% $$e\left(\infty\right)=\frac{1}{lim_{s\rightarrow0}sG_{C}G\left(s\right)}=\frac{4}{K}$$
+%
+% $$\frac{4}{K}=\frac{1}{K_{v}}$$
+%
+% Therefore the required K is:
+%
+% $$K=40$$
+%%
+% 2. Bode plot of the open-loop system:
+%
+% The transfer system is:
+%
+% $$G_{C}G\left(s\right)=\frac{40s+200}{s^{4}+12s^{3}+22s^{2}+20s}$$
+
+G_c = tf([0 40 200],[1 12 22 20 0]);
+bode(G_c)
+cross_freq = allmargin(G_c);
+cross_freq.PMFrequency
+
+##### SOURCE END #####
+--></body></html>
